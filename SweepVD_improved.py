@@ -25,6 +25,7 @@ import os
 import time
 import numpy as np
 from enum import IntEnum, auto
+from typing import Optional
 
 import pyvisa
 import pyqtgraph as pg
@@ -59,8 +60,8 @@ class KeithleySMU:
     # -------------------------------------------------
 
     def __init__(self) -> None:
-        self._rm: pyvisa.ResourceManager | None = None
-        self._instr: pyvisa.resources.MessageBasedResource | None = None
+        self._rm: Optional[pyvisa.ResourceManager] = None
+        self._instr: Optional[pyvisa.resources.MessageBasedResource] = None
 
     # ------------------------------------------------------------------
     # Connection management
@@ -240,10 +241,10 @@ class MyApp(QMainWindow):
         self.real_vg_data: list[float] = [0.0]
 
         # File path (set by SaveTxt)
-        self.fpath: str | None = None
+        self.fpath: Optional[str] = None
 
         # Sweep timer
-        self.timer2: QTimer | None = None
+        self.timer2: Optional[QTimer] = None
 
         # -- Post-init cleanup -------------------------------------------
         self.progress.reset()

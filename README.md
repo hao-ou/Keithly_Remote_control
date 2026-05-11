@@ -14,7 +14,8 @@ A PyQt5 desktop application for remote control of a Keithley source-measure unit
 
 | Package        | Version  | Purpose                        |
 |---------------|----------|--------------------------------|
-| Python         | ≥ 3.10   | Runtime                        |
+| Python         | 3.9      | Runtime                        |
+| Spyder         | 5.0.0    | IDE                            |
 | PyQt5          | ≥ 5.15   | GUI framework                  |
 | pyqtgraph      | ≥ 0.13   | Real-time plotting             |
 | pyvisa         | ≥ 1.13   | Instrument communication       |
@@ -26,7 +27,9 @@ Install with pip:
 pip install PyQt5 pyqtgraph pyvisa numpy
 ```
 
-> **Note:** You also need a VISA backend. Use `pip install pyvisa-py` for a pure-Python backend, or install NI-VISA from National Instruments for GPIB hardware support.
+> **Note:** This application has been tested with Python 3.9 and Spyder 5.0.0. Newer Python versions may work, but the code avoids PEP 604 syntax (`X | None`) specifically to maintain 3.9 compatibility.
+>
+> You also need a VISA backend. Use `pip install pyvisa-py` for a pure-Python backend, or install NI-VISA from National Instruments for GPIB hardware support.
 
 ## UI File
 
